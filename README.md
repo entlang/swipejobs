@@ -1,3 +1,4 @@
-run commands in this order
+Run commands in this order:
+ - nmp install
  - gulp
  - npm start
