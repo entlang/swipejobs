@@ -1,0 +1,59 @@
+@linkColor: #3b68af;
+@headerColor: #3b68af;
+@shadowColor: #888888;
+@borderColor: #cccccc;
+@defaultTextColor: #333333;
+@lighterTextColor: #525452;
+@fontSize: 12px;
+@logoHeight: 100px;
+@logoWidth: 100px;
+
+* { 
+  font-family: Arial, Helvetica, sans-serif; 
+  color: @defaultTextColor;
+}
+
+.stickyHeader{
+  height: 50px; 
+  line-height: 50px; 
+  background: @headerColor; 
+  position: fixed;
+  z-index: 100; 
+  width:100%; 
+  vertical-align: middle;
+}
+
+.logo{
+  height:@logoHeight;
+  width: @logoWidth;
+}
+
+.content{
+  padding-top:60px;
+}
+
+.tradingHours{
+  color: @lighterTextColor;
+  font-size: @fontSize;
+}
+
+.colorLightBlue{
+  color: @linkColor;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+hr{
+  .margin(5px, 10px, 5px, 10px);
+  border-top: 1px solid @borderColor !important;
+  box-shadow: 3px 3px 5px @shadowColor;
+}
+
+.margin(@top, @right, @bottom, @left){
+  margin-top: @top !important;
+  margin-bottom: @bottom !important; 
+  margin-left: @left !important; 
+  margin-right: @right !important;
+}

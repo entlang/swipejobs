@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './components/job';
-import { JobService } from "/app/services/job";
-import { DateFormat } from "/app/pipes/dateFormat";
+import { JobService } from "./services/job";
+import { DateFormat } from "./pipes/dateFormat";
 
 @NgModule({
   imports: [ BrowserModule, HttpModule ],

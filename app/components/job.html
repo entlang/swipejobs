@@ -1,43 +1,60 @@
-<div class="row" style="margin: 0px;">
+<div class="row no-margin">
 	<div class="col-xs-12">
-		<div class="row" style="height: 50px; line-height: 50px; background: #ccc; position: fixed;z-index: 100; width:100%; vertical-align: middle;">
-			<button class="btn btn-md">Jobs Available</button>	
+		<div class="row stickyHeader padding-left-10">
+			<button class="btn btn-md margin-left-15">Jobs Available</button>	
 		</div>
-		<div class="row" style="padding-top: 60px">
-			<div class="col-xs-4">
-				<img src="{{jobData?.company?.logo}}" alt="Smiley face" height="100" width="100">
+
+		<div class="row content">
+			<div class="col-xs-4 padding-left-10">
+				<img src="{{jobData?.company?.logo}}" alt="logo" class="logo">
 			</div>
 			<div class="col-xs-8">
-				<div>{{jobData?.title}}</div>
+				<div><b>{{jobData?.title}}</b></div>
 				<div>{{jobData?.company?.name}}</div>
-				<div>{{jobData?.wagePerHourInCents/100 |  currency:'USD':true:'1.2-2'}}/hour</div>
-				<div *ngIf="jobData?.shifts.length>0">
+				<div>{{jobData?.wagePerHourInCents/100 | currency:'USD':true:'1.2-2'}}/hour</div>
+				<div *ngIf="jobData?.shifts.length>0" class="tradingHours"><b>
 					{{jobData?.shifts[0].startDate | dateFormat:"short"}} - 
-					{{jobData?.shifts[jobData?.shifts.length-1].endDate | date}}
+					{{jobData?.shifts[jobData?.shifts.length-1].endDate | date}}</b>
 				</div>
 			</div>
 		</div>
+
 		<div class="row">
-			<div class="col-xs-12">
-				<div>If you like this job you are agreeing to work ALL DAYS.</div>
-				<div *ngFor="let item of jobData?.shifts">
+			<div class="col-xs-12 padding-left-10">
+				<div class="padding-top-10 padding-bottom-10"><strong>If you like this job you are agreeing to work ALL DAYS.</strong></div>
+				<div *ngFor="let item of jobData?.shifts" class="tradingHours">
 					<span>{{item.startDate | dateFormat }}</span>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12">
+	        <hr/>
+			<div class="col-xs-12 padding-left-10">
 				<div>Location</div>
-				<div>{{jobData?.company?.address}}</div>
+				<div class="cursor-pointer">
+					<i class="fa fa-location-arrow" aria-hidden="true"></i>
+					<u class="colorLightBlue">{{jobData?.company?.address}}</u>
+				</div>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12">
+		    <hr/>
+			<div class="col-xs-12 padding-left-10">
 				<div>Branch</div>
 				<div>{{jobData?.branch}}</div>
-				<div>{{jobData?.branchPhoneNumber}}</div>
+				<div><u class="colorLightBlue">{{jobData?.branchPhoneNumber}}</u></div>
+			</div>
+		</div>
+
+		<div class="row padding-bottom-10">
+		    <hr/>
+			<div class="col-xs-6">
+				<div class="colorLightBlue">NO THANKS</div>				
+			</div>
+			<div class="col-xs-6">
+				<div class="colorLightBlue">I'LL TAKE IT</div>				
 			</div>
 		</div>
 	</div>

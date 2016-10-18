@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {JobService} from "/app/services/job";
-import {Job} from "/app/models/job";
-import { DateFormat } from "/app/pipes/dateFormat";
+import {JobService} from "../services/job";
+import { Job } from "../models/job";
+import { DateFormat } from "../pipes/dateFormat";
 
 @Component({
     selector: 'my-app',
@@ -10,7 +10,7 @@ import { DateFormat } from "/app/pipes/dateFormat";
 })
 
 export class AppComponent implements OnInit{ 
-	private jobData:Job:
+	private jobData:Job;
 
 	constructor(private jobService: JobService){}
 
