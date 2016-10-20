@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
   "scripts": {
-    "start": "concurrent --kill-others \"npm run tsc:w\" \"npm run lite\" ",
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lint": "tslint ./app/**/*.ts -t verbose",
     "lite": "lite-server",
     "postinstall": "typings install",
